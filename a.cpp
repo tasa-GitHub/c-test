@@ -80,16 +80,21 @@ int sum_int(){
     return ans;
 }
 
-void makeint(string name,map<string,int> %ints){
+void makeint(string name,map<string,int> &ints){
     ints[name] = sum_int();
 }
 
-void print_int(string name,map<string,int> %ints){
+void print_int(string name,map<string,int> &ints){
     pri(ints.at(name));
 }
-vi read_vec(){
+vi read_vec(map<string,vi> &vecs){
     vi ans;
     string temp;
+    in(temp);
+    if(temp != "["){
+        ans = vecs[temp];
+        return ans;
+    }
     int i = 0;
     while(temp != "]") {
         int nu;
@@ -101,16 +106,16 @@ vi read_vec(){
     return ans;
 }
 
-vi sum_vec(){
+vi sum_vec(string name,map<string,vi> &vecs){
     string temp;
-    in(temp);
-    vi ans = read_vec();
+    //in(temp);
+    vi ans = read_vec(vecs);
     in(temp);
     while (temp != ";"){
-        vi vec = read_vec();
+        vi vec = read_vec(vecs);
         if (temp == "+"){
-            rep(i,ans.size()){
-                ans[i] += vec[i];
+            for(int j;j < ans.size();j++){
+                ans[j] += vec[j];
             }
         }
         if (temp == "-"){
@@ -122,12 +127,16 @@ vi sum_vec(){
     return ans;
 }
 
-
-void makevec(string name,map<string,vi> %vecs){
+void makevec(string name,map<string,vi> &vecs){
     vecs[name] = sum_vec();
 }
 
-void printvec()
+void printvec(string name,string name,map<string,vi> &vecs){
+    vi ans = vecs.at(name);
+    pr("[ ");
+    prv2(ans," ");
+    pri("]");
+}
 
 int main() { 
   int N;
@@ -151,7 +160,7 @@ int main() {
           makevec(name,vecs);
       }
       else if(vo=="print_vec"){
-          printvec(vecs);
+          printvec(name,vecs);
       }
   }
 }
