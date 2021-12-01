@@ -60,6 +60,7 @@ using f80 = __float80;
 #define rvsort(d) RALL(sort,d)//配列sort(降順)
 #define prv(a) for(auto x:a)pr2(x,endl);//配列全表示(改行)
 #define prv2(a,b) for(auto x:a)pr2(x,b);//配列全表示(選択可)
+/*
 int sum_int(){
     int ans = 0;
     string vo = " ";
@@ -137,7 +138,19 @@ void printvec(string name,string name,map<string,vi> &vecs){
     prv2(ans," ");
     pri("]");
 }
+*/
+int sum_int(pair<string,int> siki,map<string,int> &ints){
+  int ans = 0;
+  return ans;
+}
+void make_int(string name,pair<string,int> siki,map<string,int> &ints){
+  ints[name] = sum_int(siki,ints);
+}
 
+void print_int(pair<string,int> siki,map<string,int> &ints){
+  int ans = sum_int(siki, ints);
+  pri(ans);
+}
 int main() { 
   int N;
   in(N);
@@ -147,20 +160,31 @@ int main() {
       string vo;
       in(vo);
       if(vo=="int"){
-          string name,iko;
-          in2(name,iko);
-          makeint(name,ints);
+  		pair<string,int> siki;
+        string name,iko,temp;
+        int sum,i = 1;
+        in2(name,iko);
+        siki.at(0).first = "+";
+        in(sum);
+        while(temp != ";"){
+          in(temp);
+          if(temp == ";")break;
+          siki.at(i).first = temp;
+          in(sum);
+          siki.at(i).second() = sum;
+        }
+        make_int(name,siki,ints);
       }
       else if(vo=="print_int"){
-          printint(ints);
+          print_int(ints);
       }
       else if(vo=="vec"){
           string name,iko,kakko;
           in3(name,iko,kakko);
-          makevec(name,vecs);
+          //makevec(name,vecs);
       }
       else if(vo=="print_vec"){
-          printvec(name,vecs);
+          //printvec(name,vecs);
       }
   }
 }
