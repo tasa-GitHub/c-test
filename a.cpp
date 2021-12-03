@@ -93,37 +93,7 @@
     void print_int(map<char,int> &ints){
       pr(sum_int(ints));
     }
-
     //vec
-    /*
-    vi sum_vec(map<char,int> &ints,map<char,vi> &vecs){
-      vi ans,vec;
-      int i = 0;
-      char temp = '-';
-      char tes = '[';
-      while(temp != ';'){
-        in(tes);
-        vec = {1,2,3,4,5};
-        
-        if(temp == '+'){//debug("ok");
-        rep(j,(vec.size())){
-          int an = ans[j];
-          int ve = vec[j];
-          ans[j] = an + ve;
-        }
-        }
-        else if(temp == '-'){
-          rep(j,(vec.size())){
-            ans[j] -= vec[j];
-          }
-        }
-        in(temp);
-        //i++;
-        temp = ';';
-        if(temp == ';')return ans;
-      }
-      return ans;
-    }*/
     vi read_vec(map<char,int> &ints,map<char,vi> &vecs){
       vi ans;
       char star;
@@ -153,7 +123,6 @@
       }
       return ans;
     }
-
     vi sum_vec(map<char,int> &ints,map<char,vi> &vecs){
       vi ans,temp;
       char fugou = '+';
