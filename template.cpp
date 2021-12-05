@@ -49,7 +49,7 @@ typedef vector<ll> vll;//longlong配列宣言
 typedef vector<vll> vvll;//longlong2次元配列宣言
 typedef vector<string> vs;//string配列宣言
 typedef vector<bool> vb;//bool配列宣言
-typedef pair<int, int> P;//pair配列宣言
+typedef pair<int, int> Pa;//pair配列宣言
 using f32 = float;
 using f64 = double;
 using f80 = __float80;
