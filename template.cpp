@@ -11,7 +11,7 @@ using namespace std;
 #define rep1(i,n) FOR(i,1,n+1)//繰り返し(始点1)(変数名,回数)
 //cout to pri
 #define pri(x) cout<<x//改行なし出力
-#define prn cout<<endl;//改行のみ出力
+#define prn cout<<endl//改行のみ出力
 #define pr(x) {pri(x);prn;}//改行あり出力
 #define debug(x) {pri(x);prn;}//改行あり出力(わかりやすく)
 #define END(a) {pr(a);return;}//出力と終了
