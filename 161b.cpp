@@ -10,13 +10,13 @@ using namespace std;
 #define rep(i,n) FOR(i,0,n)//繰り返し(始点0)(変数名,回数)
 #define rep1(i,n) FOR(i,1,n+1)//繰り返し(始点1)(変数名,回数)
 //cout to pri
-#define pr(x) cout<<x//改行なし出力
+#define pri(x) cout<<x//改行なし出力
 #define prn cout<<endl//改行のみ出力
-#define pri(x) {pr(x);prn;}//改行あり出力
-#define debug(x) {pr(x);prn;}//改行あり出力(わかりやすく)
-#define END(a) {pri(a);return 0;}//出力と終了
-#define pr2(x,y) {pr(x);pr(y);}//2個同時出力
-#define pr3(x,y,z) {pr2(x,y);pr(z);}//3個同時出力
+#define pr(x) {pri(x);prn;}//改行あり出力
+#define debug(x) {pri(x);prn;}//改行あり出力(わかりやすく)
+#define END(a) {pr(a);return;}//出力と終了
+#define pr2(x,y) {pri(x);pri(y);}//2個同時出力
+#define pr3(x,y,z) {pr2(x,y);pri(z);}//3個同時出力
 #define prYes() pri("Yes")//Yesと出力
 #define prNo() pri("No")//Noと出力
 #define prYES() pri("YES")//YESと出力
@@ -49,11 +49,11 @@ typedef vector<ll> vll;//longlong配列宣言
 typedef vector<vll> vvll;//longlong2次元配列宣言
 typedef vector<string> vs;//string配列宣言
 typedef vector<bool> vb;//bool配列宣言
-typedef pair<int, int> P;//pair配列宣言
+typedef pair<int, int> Pa;//pair配列宣言
 using f32 = float;
 using f64 = double;
 using f80 = __float80;
-//関数簡略化
+//関数簡略化  
 #define ALL(fun,vari) (fun)((vari).begin(),(vari).end())//関数.begin(変数).end(変数)
 #define RALL(fun,vari) (fun)((vari).rbegin(),(vari).rend())//関数.rbegin(変数).rend(変数)
 #define vsort(d) ALL(sort,d)//配列sort(昇順)
@@ -61,6 +61,25 @@ using f80 = __float80;
 #define prv(a) for(auto x:a)pr2(x,endl);//配列全表示(改行)
 #define prv2(a,b) for(auto x:a)pr2(x,b);//配列全表示(選択可)
 
-int main() {
-  
+int main() { 
+    int N,M;
+    in2(N,M);
+    vi A(N);
+    int max=0,n;
+    rep(i,N){
+        in(n);
+        max += n;
+        A[i] = n;
+    }
+    rvsort(A);
+    int min = N/(M*4);
+    if(N%(M*4) != 0)min++;
+    if(A[M-1]>=min){
+        prYes();
+        return 0;
+    }
+    else {
+        prNo();
+        return 0;
+    }
 }
