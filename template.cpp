@@ -65,22 +65,5 @@ using f80 = __float80;
 #define viin(name,N) vi name(N);rep(niiv,N)in(name[niiv]);
 
 int main() {
-  intin(N);intin(M);
-  vi B(N);
-  rep(i,N){
-    rep(j,M){
-        
-      if (j != 0){
-        if(B[i][j-1]+1 != B[i][j]){
-          END("No");
-        }
-      }
-    }
-  }
-  rep1(i,N-1){
-    if(B[i-1][j]+7!= B[i][j]){
-      END("No");
-    }
-  }
-  END("Yes");
+  string N;
 }
